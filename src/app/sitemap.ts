@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next'
+import { siteUrl } from '@/lib/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://aggreycabropavers.com'
+  const baseUrl = siteUrl
   const now = new Date()
 
   const images = [

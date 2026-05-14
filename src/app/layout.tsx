@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
-
-const siteUrl = 'https://aggreycabropavers.com'
+import { siteUrl } from '@/lib/site'
 const siteName = 'Aggrey Cabro Pavers Installations'
 
 const coreKeywords = [
