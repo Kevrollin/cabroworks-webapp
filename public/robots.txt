@@ -1,0 +1,14 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://aggreycabro.co.ke/sitemap.xml
+
+# Disallow specific paths if any
+# Disallow: /api/
+# Disallow: /_next/
+# Disallow: /static/
+
+# Crawl-delay (optional)
+# Crawl-delay: 1
