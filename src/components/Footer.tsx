@@ -70,7 +70,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="mailto:info@aggreycabro.co.ke"
+                href="mailto:mwendebenendeta64@gmail.com"
                 className="w-9 h-9 bg-white/8 hover:bg-[#D97706] rounded-lg flex items-center justify-center transition-colors duration-300"
                 aria-label="Email"
               >
@@ -123,14 +123,14 @@ export default function Footer() {
               </div>
               <div>
                 <div className="font-body text-white/30 text-[10px] uppercase tracking-wide mb-0.5">Email</div>
-                <a href="mailto:info@aggreycabro.co.ke" className="font-body text-white/65 text-xs hover:text-[#D97706] transition-colors duration-200 break-all">
-                  info@aggreycabro.co.ke
+                <a href="mailto:mwendebenendeta64@gmail.com" className="font-body text-white/65 text-xs hover:text-[#D97706] transition-colors duration-200 break-all">
+                  mwendebenendeta64@gmail.com
                 </a>
               </div>
               <div>
                 <div className="font-body text-white/30 text-[10px] uppercase tracking-wide mb-0.5">Service Areas</div>
                 <div className="font-body text-white/65 text-sm">
-                  Nairobi · Kiambu · Nakuru<br/>Mombasa · Eldoret & more
+                  Kamulu · Nairobi · Kiambu<br/>Nakuru · Mombasa & more
                 </div>
               </div>
               <div>

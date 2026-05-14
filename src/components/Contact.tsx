@@ -89,13 +89,13 @@ export default function Contact() {
                   <div className="font-body text-[#1F2937] text-sm font-500 group-hover:text-[#D97706] transition-colors">+254 710 535 735</div>
                 </div>
               </a>
-              <a href="mailto:info@aggreycabro.co.ke" className="flex items-center gap-3 bg-white rounded-2xl p-4 border border-[#E7E3DC] hover:border-[#D97706]/40 transition-colors duration-200 group">
+              <a href="mailto:mwendebenendeta64@gmail.com" className="flex items-center gap-3 bg-white rounded-2xl p-4 border border-[#E7E3DC] hover:border-[#D97706]/40 transition-colors duration-200 group">
                 <div className="w-10 h-10 rounded-xl bg-[#FEF3C7] flex items-center justify-center flex-shrink-0">
                   <Mail size={17} className="text-[#D97706]" />
                 </div>
                 <div>
                   <div className="font-body text-[#9CA3AF] text-[10px] uppercase tracking-wide mb-0.5">Email</div>
-                  <div className="font-body text-[#1F2937] text-xs font-500 group-hover:text-[#D97706] transition-colors break-all">info@aggreycabro.co.ke</div>
+                  <div className="font-body text-[#1F2937] text-xs font-500 group-hover:text-[#D97706] transition-colors break-all">mwendebenendeta64@gmail.com</div>
                 </div>
               </a>
               <div className="flex items-center gap-3 bg-white rounded-2xl p-4 border border-[#E7E3DC]">
@@ -104,7 +104,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="font-body text-[#9CA3AF] text-[10px] uppercase tracking-wide mb-0.5">Service Area</div>
-                  <div className="font-body text-[#1F2937] text-xs font-500">Nairobi, Kiambu, Nakuru & more</div>
+                  <div className="font-body text-[#1F2937] text-xs font-500">Kamulu, Nairobi & more</div>
                 </div>
               </div>
               <div className="flex items-center gap-3 bg-white rounded-2xl p-4 border border-[#E7E3DC]">
@@ -121,7 +121,7 @@ export default function Contact() {
             {/* Map embed */}
             <div className="rounded-2xl overflow-hidden border border-[#E7E3DC] shadow-sm" style={{ height: '200px' }}>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255282.35853631137!2d36.68248285!3d-1.3031934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1172d84d49a7%3A0xf7cf0254b297924c!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1700000000000"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255282.35853631137!2d37.0730!3d-1.2833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sKamulu%2C%20Nairobi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1700000000000"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -200,7 +200,7 @@ export default function Contact() {
                       required
                       value={form.location}
                       onChange={handleChange}
-                      placeholder="e.g. Karen, Nairobi"
+                      placeholder="e.g. Kamulu, Nairobi"
                       className={inputClass}
                       autoComplete="address-level2"
                     />
