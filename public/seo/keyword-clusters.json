@@ -1,0 +1,80 @@
+{
+  "market": "Kenya",
+  "language": "en-KE",
+  "lastUpdated": "2026-05-14",
+  "notes": "Prioritized high-intent local-service keywords for cabro paving and related searches.",
+  "clusters": [
+    {
+      "name": "Core Service Keywords",
+      "intent": "transactional",
+      "keywords": [
+        "cabro installation kenya",
+        "cabro paving nairobi",
+        "interlocking blocks installation kenya",
+        "driveway paving kenya",
+        "parking paving kenya",
+        "walkway paving kenya",
+        "compound paving kenya",
+        "commercial paving kenya",
+        "residential paving kenya",
+        "cabro repairs kenya"
+      ]
+    },
+    {
+      "name": "Local SEO Modifiers",
+      "intent": "transactional",
+      "keywords": [
+        "cabro installation near me",
+        "paving contractor near me",
+        "cabro company nairobi",
+        "cabro company kiambu",
+        "cabro company nakuru",
+        "cabro company mombasa",
+        "paving services westlands",
+        "driveway paving runda",
+        "cabro installation karen",
+        "parking paving kilimani"
+      ]
+    },
+    {
+      "name": "Commercial / B2B",
+      "intent": "commercial",
+      "keywords": [
+        "parking lot paving contractors kenya",
+        "estate road paving kenya",
+        "school parking paving kenya",
+        "mall parking paving nairobi",
+        "apartment compound paving kenya",
+        "construction paving subcontractor kenya",
+        "cabro paving for businesses",
+        "heavy duty paving kenya"
+      ]
+    },
+    {
+      "name": "Informational / Price",
+      "intent": "informational",
+      "keywords": [
+        "cabro prices kenya",
+        "cabro installation cost kenya",
+        "how much is driveway paving in kenya",
+        "best paving blocks for driveway",
+        "cabro maintenance tips",
+        "difference between cabro and concrete",
+        "how long does cabro installation take",
+        "paving drainage requirements kenya"
+      ]
+    },
+    {
+      "name": "Long-Tail High Intent",
+      "intent": "transactional",
+      "keywords": [
+        "professional cabro installation for homes in nairobi",
+        "best driveway paving contractor in kenya",
+        "affordable parking paving services in kenya",
+        "walkway and landscaping paving company kenya",
+        "cabro paving quotation whatsapp kenya",
+        "durable interlocking pavers installation kenya"
+      ]
+    }
+  ]
+}

@@ -1,44 +1,54 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://aggreycabro.co.ke'
-  
+  const baseUrl = 'https://aggreycabropavers.com'
+  const now = new Date()
+
+  const images = [
+    `${baseUrl}/projects/curved-driveway.webp`,
+    `${baseUrl}/projects/concrete-finishing.webp`,
+    `${baseUrl}/projects/paver-installation.webp`,
+    `${baseUrl}/projects/park-walkway.webp`,
+    `${baseUrl}/projects/block-laying.webp`,
+  ]
+
   return [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: 'weekly',
       priority: 1,
     },
     {
-      url: `${baseUrl}/#services`,
-      lastModified: new Date(),
+      url: `${baseUrl}/services`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/projects`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    // example project pages (canonical URLs) — add more as you publish
     {
-      url: `${baseUrl}/#projects`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#why-us`,
-      lastModified: new Date(),
+      url: `${baseUrl}/projects/concrete-finishing`,
+      lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/#process`,
-      lastModified: new Date(),
+      url: `${baseUrl}/projects/paver-installation`,
+      lastModified: now,
       changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/#contact`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
+      priority: 0.7,
     },
   ]
 }

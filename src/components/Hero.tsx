@@ -6,27 +6,48 @@ import { ArrowDown } from 'lucide-react'
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(false)
+  const [activeImage, setActiveImage] = useState(0)
+
+  const heroImages = [
+    '/projects/concrete-finishing.webp',
+    '/projects/paver-installation.webp',
+    '/projects/park-walkway.webp',
+    '/projects/curved-driveway.webp',
+    '/projects/block-laying.webp',
+  ]
 
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 80)
     return () => clearTimeout(t)
   }, [])
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveImage((prev) => (prev + 1) % heroImages.length)
+    }, 5500)
+    return () => clearInterval(interval)
+  }, [heroImages.length])
+
   const scrollTo = (id: string) => {
     document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
-    <section id="home" className="relative w-full h-screen min-h-[580px] max-h-[900px] overflow-hidden">
-      {/* Background image */}
-      <Image
-        src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=85"
-        alt="Professional cabro paving installation"
-        fill
-        priority
-        className="object-cover object-center"
-        sizes="100vw"
-      />
+    <section id="home" className="relative w-full h-[85vh] min-h-[493px] max-h-[765px] overflow-hidden">
+      {/* Background image (silent rotating gallery) */}
+      {heroImages.map((src, i) => (
+        <Image
+          key={src}
+          src={src}
+          alt="Professional cabro paving installation"
+          fill
+          priority={i === 0}
+          className={`object-cover object-center transition-opacity duration-[1600ms] ease-in-out ${
+            i === activeImage ? 'opacity-100' : 'opacity-0'
+          }`}
+          sizes="100vw"
+        />
+      ))}
 
       {/* Overlay */}
       <div className="hero-overlay absolute inset-0 z-10" />

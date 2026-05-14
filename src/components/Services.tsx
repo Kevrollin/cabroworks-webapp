@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const services = [
   {
@@ -104,13 +104,16 @@ const services = [
 
 export default function Services() {
   const sectionRef = useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible] = useState(false)
+  const [expandedCard, setExpandedCard] = useState<number | null>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'))
+            setIsVisible(true)
+            observer.disconnect()
           }
         })
       },
@@ -125,15 +128,15 @@ export default function Services() {
       <div className="container-custom">
         {/* Header */}
         <div className="text-center mb-10 md:mb-14">
-          <div className="reveal flex items-center justify-center gap-3 mb-3">
+          <div className={`reveal ${isVisible ? 'visible' : ''} flex items-center justify-center gap-3 mb-3`}>
             <span className="w-7 h-px bg-[#D97706]" />
             <span className="text-[#D97706] text-xs font-body font-600 tracking-widest uppercase">What We Do</span>
             <span className="w-7 h-px bg-[#D97706]" />
           </div>
-          <h2 className="reveal font-heading font-700 text-[#1F2937] mb-3" style={{ fontSize: 'clamp(1.7rem, 4vw, 2.6rem)' }}>
+          <h2 className={`reveal ${isVisible ? 'visible' : ''} font-heading font-700 text-[#1F2937] mb-3`} style={{ fontSize: 'clamp(1.7rem, 4vw, 2.6rem)' }}>
             Our Services
           </h2>
-          <p className="reveal font-body text-[#6B7280] max-w-sm mx-auto text-sm" style={{ lineHeight: '1.75' }}>
+          <p className={`reveal ${isVisible ? 'visible' : ''} font-body text-[#6B7280] max-w-sm mx-auto text-sm`} style={{ lineHeight: '1.75' }}>
             Every outdoor space deserves a clean finish. We handle the full scope.
           </p>
         </div>
@@ -141,20 +144,36 @@ export default function Services() {
         {/* Cards grid */}
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
           {services.map((s, i) => (
-            <div
+            <button
               key={s.title}
-              className={`reveal reveal-delay-${Math.min(i + 1, 5)} card-hover bg-white rounded-2xl p-4 sm:p-6 border border-[#F0ECE5] group`}
+              type="button"
+              onClick={() => setExpandedCard(expandedCard === i ? null : i)}
+              className={`reveal ${isVisible ? 'visible' : ''} reveal-delay-${Math.min(i + 1, 5)} card-hover bg-white rounded-2xl p-4 sm:p-6 border border-[#F0ECE5] group text-left transition-all duration-300 sm:scale-100 sm:shadow-none ${
+                expandedCard === i ? 'scale-[1.02] shadow-sm' : 'scale-100'
+              }`}
+              aria-expanded={expandedCard === i}
             >
-              <div className="w-12 h-12 rounded-xl bg-[#FEF3C7] flex items-center justify-center mb-4 group-hover:bg-[#D97706]/10 transition-colors duration-300">
+              <div className="hidden sm:flex w-12 h-12 rounded-xl bg-[#FEF3C7] items-center justify-center mb-4 group-hover:bg-[#D97706]/10 transition-colors duration-300">
                 {s.icon}
               </div>
               <h3 className="font-heading font-600 text-[#1F2937] text-sm sm:text-base mb-1.5 group-hover:text-[#D97706] transition-colors duration-300 leading-snug">
                 {s.title}
               </h3>
-              <p className="font-body text-[#6B7280] text-xs sm:text-sm leading-relaxed hidden sm:block">
+              <p
+                className="font-body text-[#6B7280] text-xs leading-relaxed sm:hidden"
+                style={{
+                  display: '-webkit-box',
+                  WebkitLineClamp: expandedCard === i ? 'unset' : 3,
+                  WebkitBoxOrient: 'vertical',
+                  overflow: expandedCard === i ? 'visible' : 'hidden',
+                }}
+              >
                 {s.desc}
               </p>
-            </div>
+              <p className="hidden sm:block font-body text-[#6B7280] text-sm leading-relaxed">
+                {s.desc}
+              </p>
+            </button>
           ))}
         </div>
       </div>

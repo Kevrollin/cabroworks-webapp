@@ -1,0 +1,53 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-05-14",
+  "objective": "Win local high-intent search traffic for paving and cabro installation in Kenya.",
+  "pages": [
+    {
+      "type": "homepage",
+      "url": "/",
+      "primaryKeyword": "cabro installation kenya",
+      "secondaryKeywords": [
+        "driveway paving kenya",
+        "parking paving kenya",
+        "walkway paving kenya"
+      ],
+      "titlePattern": "Aggrey Cabro Pavers Installations | Professional Paving in Kenya",
+      "metaDescriptionPattern": "Professional cabro installation, driveway paving, parking areas, walkways and outdoor finishing across Kenya. Clean finish. Built to last.",
+      "schema": ["LocalBusiness", "ProfessionalService", "WebSite"]
+    },
+    {
+      "type": "service-landing",
+      "urlSuggestion": "/services/[service-slug]",
+      "primaryKeywordPattern": "[service] in [city]",
+      "schema": ["Service", "FAQPage", "BreadcrumbList"]
+    },
+    {
+      "type": "city-landing",
+      "urlSuggestion": "/locations/[city]",
+      "primaryKeywordPattern": "cabro installation [city]",
+      "schema": ["LocalBusiness", "Service", "BreadcrumbList"]
+    },
+    {
+      "type": "project-case-study",
+      "urlSuggestion": "/projects/[project-slug]",
+      "primaryKeywordPattern": "[project type] paving in [location]",
+      "schema": ["Article", "ImageObject", "BreadcrumbList"]
+    }
+  ],
+  "blogTopics": [
+    "Cabro installation cost in Kenya (updated guide)",
+    "Best paving patterns for driveways in Nairobi",
+    "How to choose a cabro contractor in Kenya",
+    "Drainage mistakes to avoid in driveway paving",
+    "Cabro maintenance checklist for homeowners",
+    "Commercial parking paving specs in Kenya"
+  ],
+  "internalLinking": {
+    "rules": [
+      "Each service card links to a dedicated service page",
+      "Each city page links back to the relevant service pages",
+      "Every blog post links to at least one service page and one location page"
+    ]
+  }
+}

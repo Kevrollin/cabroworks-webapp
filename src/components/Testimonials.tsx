@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const testimonials = [
   {
@@ -138,24 +137,6 @@ export default function Testimonials() {
               What Clients Say
             </h2>
             <p className="reveal font-body text-[#6B7280] text-sm">Real feedback from real projects across Kenya.</p>
-          </div>
-          <div className="reveal flex items-center gap-2">
-            <button
-              onClick={() => scrollToIdx(Math.max(activeIdx - 1, 0))}
-              disabled={activeIdx === 0}
-              className="w-10 h-10 rounded-full border border-[#D97706] text-[#D97706] flex items-center justify-center hover:bg-[#D97706] hover:text-white transition-all duration-300 disabled:opacity-30"
-              aria-label="Previous"
-            >
-              <ChevronLeft size={17} />
-            </button>
-            <button
-              onClick={() => scrollToIdx(Math.min(activeIdx + 1, testimonials.length - 1))}
-              disabled={activeIdx === testimonials.length - 1}
-              className="w-10 h-10 rounded-full bg-[#D97706] text-white flex items-center justify-center hover:bg-[#B45309] transition-all duration-300 disabled:opacity-30"
-              aria-label="Next"
-            >
-              <ChevronRight size={17} />
-            </button>
           </div>
         </div>
       </div>

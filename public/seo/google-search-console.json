@@ -1,0 +1,25 @@
+{
+  "checklist": [
+    "Set NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION in Vercel Project Settings > Environment Variables.",
+    "Deploy production build and verify https://aggreycabropavers.com is live.",
+    "Open Google Search Console and add Domain property: aggreycabropavers.com.",
+    "Verify ownership via DNS TXT record.",
+    "Submit sitemap: https://aggreycabropavers.com/sitemap.xml.",
+    "Confirm robots.txt is accessible at https://aggreycabropavers.com/robots.txt.",
+    "Request indexing for homepage after deploy.",
+    "Monitor Coverage, Core Web Vitals, and Enhancements weekly.",
+    "Track query performance and iterate titles/descriptions monthly."
+  ],
+  "recommendedTools": [
+    "Google Search Console",
+    "Google Analytics 4",
+    "Google PageSpeed Insights",
+    "Bing Webmaster Tools"
+  ],
+  "ownerCredit": {
+    "designer": "Kelvin Mukaria",
+    "developer": "Kelvin Mukaria",
+    "techLead": "Kelvin Mukaria",
+    "portfolio": "https://kelvinmukaria.vercel.app"
+  }
+}

@@ -2,50 +2,43 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
-import { MapPin, ChevronLeft, ChevronRight } from 'lucide-react'
+import { MapPin } from 'lucide-react'
 
 const projects = [
   {
-    image: 'https://images.unsplash.com/photo-1590725140246-20acddc1ec6d?w=800&q=80',
-    type: 'Residential Driveway',
-    location: 'Karen, Nairobi',
-    result: 'Full driveway transformation with herringbone pattern cabro.',
-    tag: 'Driveway',
+    image: '/projects/concrete-finishing.webp',
+    type: 'Concrete Finishing',
+    location: 'Nairobi',
+    result: 'High-quality slab finishing with smooth leveling and clean edge work.',
+    tag: 'Concrete',
   },
   {
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
-    type: 'Commercial Parking',
-    location: 'Westlands, Nairobi',
-    result: 'High-traffic parking area for a retail complex.',
-    tag: 'Parking',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80',
-    type: 'Garden Walkway',
-    location: 'Nakuru',
-    result: 'Curved pathway through landscaped garden compound.',
+    image: '/projects/paver-installation.webp',
+    type: 'Walkway Installation',
+    location: 'Kiambu',
+    result: 'Precision placement of paving slabs on a compacted stone base.',
     tag: 'Walkway',
   },
   {
-    image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80',
-    type: 'Estate Roads',
-    location: 'Kiambu',
-    result: 'Internal estate road network for gated community.',
-    tag: 'Roads',
+    image: '/projects/park-walkway.webp',
+    type: 'Park Pathway',
+    location: 'Nakuru',
+    result: 'Long-form pedestrian pathway integrated into green landscaping.',
+    tag: 'Pathway',
   },
   {
-    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80',
-    type: 'Home Compound',
+    image: '/projects/curved-driveway.webp',
+    type: 'Curved Driveway',
     location: 'Runda, Nairobi',
-    result: 'Full compound paving for luxury residential property.',
-    tag: 'Compound',
+    result: 'Elegant curved paver layout with neat landscaping boundaries.',
+    tag: 'Driveway',
   },
   {
-    image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&q=80',
-    type: 'Apartment Parking',
-    location: 'Kilimani, Nairobi',
-    result: 'Multi-level apartment block parking and entry lane.',
-    tag: 'Parking',
+    image: '/projects/block-laying.webp',
+    type: 'Cabro Block Laying',
+    location: 'Westlands, Nairobi',
+    result: 'Durable block installation with stable bedding and tight joints.',
+    tag: 'Cabro',
   },
 ]
 
@@ -100,6 +93,16 @@ export default function Projects() {
     setActiveIdx(idx)
   }
 
+  // Silent auto-scroll rotation
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const next = (activeIdx + 1) % projects.length
+      scrollToIdx(next)
+    }, 4500)
+    return () => clearInterval(interval)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeIdx, STEP])
+
   return (
     <section id="projects" className="section-padding bg-[#1F2937] overflow-hidden" ref={sectionRef}>
       <div className="container-custom">
@@ -115,24 +118,6 @@ export default function Projects() {
               Recent Projects
             </h2>
             <p className="reveal font-body text-white/50 text-sm">A sample of our work across Kenya.</p>
-          </div>
-          <div className="reveal flex items-center gap-2">
-            <button
-              onClick={() => scrollToIdx(Math.max(activeIdx - 1, 0))}
-              disabled={activeIdx === 0}
-              className="w-10 h-10 rounded-full border border-white/20 text-white flex items-center justify-center hover:border-[#D97706] hover:text-[#D97706] transition-all duration-300 disabled:opacity-30"
-              aria-label="Previous project"
-            >
-              <ChevronLeft size={17} />
-            </button>
-            <button
-              onClick={() => scrollToIdx(Math.min(activeIdx + 1, projects.length - 1))}
-              disabled={activeIdx === projects.length - 1}
-              className="w-10 h-10 rounded-full bg-[#D97706] text-white flex items-center justify-center hover:bg-[#B45309] transition-all duration-300 disabled:opacity-30"
-              aria-label="Next project"
-            >
-              <ChevronRight size={17} />
-            </button>
           </div>
         </div>
       </div>

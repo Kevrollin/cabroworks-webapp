@@ -148,9 +148,22 @@ export default function Footer() {
           <p className="font-body text-white/25 text-xs">
             © {new Date().getFullYear()} Aggrey Cabro Pavers Installations. All rights reserved.
           </p>
-          <p className="font-body text-white/18 text-xs">
-            Professional Paving Across Kenya
-          </p>
+          <div className="flex flex-col sm:items-end gap-0.5">
+            <p className="font-body text-white/18 text-xs">
+              Professional Paving Across Kenya
+            </p>
+            <p className="font-body text-white/30 text-[11px]">
+              Designed, developed and tech-led by{' '}
+              <a
+                href="https://kelvinmukaria.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#D97706] hover:text-[#F59E0B] transition-colors duration-200"
+              >
+                Kelvin Mukaria
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
